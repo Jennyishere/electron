@@ -22,13 +22,24 @@ function createWindow () {
   handleIPC()
 }
 function handleIPC(){
-  ipcMain.handle('work-notification',()=>{
-    new Notification({
-      title:'任务结束',
-      body:'是否开始休息',
-      action:[{text:'开始休息',type:'button'}],
-      closeButtonText:'继续工作'
+  ipcMain.handle('work-notification',async()=>{
+    let res=await new Promise((resolve, reject) => {
+      let notification= new Notification({
+        title:'任务结束',
+        body:'是否开始休息',
+        actions:[{text:'开始休息',type:'button'}], // macOS -
+        closeButtonText:'继续工作'  // macOS -
+      })
+      notification.show()
+      notification.on('action', () => {
+        resolve('rest')
     })
+    notification.on('close', () => {
+      console.log('close');
+        resolve('work')
+    })
+    })
+    return res
   })
 }
 // This method will be called when Electron has finished
