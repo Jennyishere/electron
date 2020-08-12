@@ -60,9 +60,13 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ### IPC模块通信:  
 #### 从渲染进程到主进程  
 -callback写法:  
-ipcRenderer.send(channel,...args)   //发送事件  
-ipcRenderer.on(channel, listener)    /响应事件  
+渲染进程: ipcRenderer.send(channel,...args)   //发送事件  
+主进程: ipcRenderer.on(channel, listener)    /响应事件  
 (相当于emit)  
 -Promise写法 Electron7开始   
-ipcRenderer.invoke(channel,...args)   //处理请求  
-ipcMain.handle(channel, listener)    /响应模式  
+渲染进程: ipcRenderer.invoke(channel,...args)   //处理请求  
+主进程: ipcMain.handle(channel, listener)    /响应模式  
+#### 从主进程到渲染进程  
+渲染进程: ipcRenderer.on(channel, listener)  
+主进程: webContents.send(channel)  
+#### 从渲染进程到渲染进程  
