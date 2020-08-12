@@ -45,24 +45,24 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 [CC0 1.0 (Public Domain)](LICENSE.md)
 
 
-# 一些笔记
-## 主进程:
-- main脚本的进程----主进程
-- 每个应用只有一个主进程
-- GUI BrowserWindow Tray Dock Menu
-- 生命周期 app
-## 渲染进程
-- 展示web页面成为渲染进程,普通web是在沙盒环境中,electron是可以通过node访问操作系统的底层
+# 一些笔记  
+## 主进程:  
+- main脚本的进程----主进程  
+- 每个应用只有一个主进程  
+- GUI BrowserWindow Tray Dock Menu  
+- 生命周期 app  
+## 渲染进程  
+- 展示web页面成为渲染进程,普通web是在沙盒环境中,electron是可以通过node访问操作系统的底层  
 - 可以有多个渲染进程
 
-## 进程间通信
-### 目的:通知事件,数据传输,共享数据
-### IPC模块通信:
-#### 从渲染进程到主进程
--callback写法:
-ipcRenderer.send(channel,...args)   //发送事件
-ipcRenderer.on(channel, listener)    /响应事件
-(相当于emit)
--Promise写法 Electron7开始 
-ipcRenderer.invoke(channel,...args)   //处理请求
-ipcMain.handle(channel, listener)    /响应模式
+## 进程间通信   
+### 目的:通知事件,数据传输,共享数据  
+### IPC模块通信:  
+#### 从渲染进程到主进程  
+-callback写法:  
+ipcRenderer.send(channel,...args)   //发送事件  
+ipcRenderer.on(channel, listener)    /响应事件  
+(相当于emit)  
+-Promise写法 Electron7开始   
+ipcRenderer.invoke(channel,...args)   //处理请求  
+ipcMain.handle(channel, listener)    /响应模式  
