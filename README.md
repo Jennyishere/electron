@@ -70,3 +70,9 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 渲染进程: ipcRenderer.on(channel, listener)  
 主进程: webContents.send(channel)  
 #### 从渲染进程到渲染进程  
+-通知事件:  
+  通过主进程转发(5之前)  
+  ipcRenderer.sendTo
+- 数据共享  
+  web技术:localStorage sessionStorage indexDB
+  使用remote(不推荐 卡顿)
