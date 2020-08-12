@@ -51,3 +51,9 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - 每个应用只有一个主进程
 - GUI BrowserWindow Tray Dock Menu
 - 生命周期 app
+## 渲染进程
+- 展示web页面成为渲染进程,普通web是在沙盒环境中,electron是可以通过node访问操作系统的底层
+- 可以有多个渲染进程
+
+## 进程间通信
+# 目的:通知事件,数据传输,共享数据
