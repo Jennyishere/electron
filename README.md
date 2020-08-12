@@ -56,4 +56,13 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - 可以有多个渲染进程
 
 ## 进程间通信
-# 目的:通知事件,数据传输,共享数据
+### 目的:通知事件,数据传输,共享数据
+### IPC模块通信:
+#### 从渲染进程到主进程
+-callback写法:
+ipcRenderer.send(channel,...args)   //发送事件
+ipcRenderer.on(channel, listener)    /响应事件
+(相当于emit)
+-Promise写法 Electron7开始 
+ipcRenderer.invoke(channel,...args)   //处理请求
+ipcMain.handle(channel, listener)    /响应模式
