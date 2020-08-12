@@ -43,3 +43,11 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+
+# 一些笔记
+## 主进程:
+- main脚本的进程----主进程
+- 每个应用只有一个主进程
+- GUI BrowserWindow Tray Dock Menu
+- 生命周期 app
