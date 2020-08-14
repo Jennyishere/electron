@@ -18,6 +18,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^9.0.5",
-    "timer.js": "^1.0.4"
+    "timer.js": "^1.0.4",
+    "progressbar.js": "^1.1.0"
   }
 }
