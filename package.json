@@ -2,9 +2,10 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "app/main/index.js",
   "scripts": {
-    "start": "electron ."
+    "start:main": "electron .",
+    "start:renderer": "cd app/renderer/src/main && npm run serve"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -20,5 +21,8 @@
     "electron": "^9.0.5",
     "timer.js": "^1.0.4",
     "progressbar.js": "^1.1.0"
+  },
+  "dependencies": {
+    "electron": "^9.2.1"
   }
 }
