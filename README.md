@@ -76,3 +76,6 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - 数据共享   
   web技术:localStorage sessionStorage indexDB  
   使用remote(不推荐 卡顿)  
+  
+  ### 结合vue框架
+  #### npm i @vue/cli -g   vue create [项目名称]
